@@ -1,3 +1,11 @@
+# IntelliJ Idea
+.idea
+.name
+*.iml
+
+# Maven
+target
+
 *.class
 
 # Mobile Tools for Java (J2ME)
