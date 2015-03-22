@@ -1,19 +1,34 @@
 package com.github.michaelkhw.playground.zero.pi;
 
+import com.google.common.base.Preconditions;
+
 /**
  * Created by michael on 21/3/15.
  */
 public class SerialPiCalculator implements PiCalculator {
     @Override
-    public double calculate(final int iterations, final int stepsPerIteration) {
+    public double calculate(final long iterations) {
+        return calculateCore(0, iterations);
+    }
+
+    /**
+     * Calculate Pi.
+     *
+     * @param fromIteration - From iteration index (starts from 0)
+     * @param toIteration - To iteration index (exclusive)
+     * @return
+     */
+    static double calculateCore(final long fromIteration, final long toIteration)
+    {
         double t = 0;
 
-        final int ttlIterations = iterations * stepsPerIteration * 2;
+        long idxStart = fromIteration * 4 + 1;
+        long idxEnd = toIteration * 4 - 3;
 
-        for (int i = 3; i <= ttlIterations; i = i + 4) {
-            t = t - (1.0d / i) + (1.0d / (i + 2));
+        for (long idx = idxStart; idx <= idxEnd ; idx += 4) {
+            t += 1.0d / idx - 1.0d / (idx + 2);
         }
 
-        return (1 + t) * 4;
+        return t * 4;
     }
 }

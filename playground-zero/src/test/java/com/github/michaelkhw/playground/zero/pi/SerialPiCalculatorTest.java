@@ -12,12 +12,14 @@ public class SerialPiCalculatorTest {
     @Test
     public void testCalculate() {
         SerialPiCalculator calculator = new SerialPiCalculator();
-        calculator.calculate(10000, 10000);
+        // Put a heavy Load to the calculator
+        calculator.calculate(10000000);
 
+        // The actual work begins
         double actual;
         // This will took almost 1 sec on my mac
         try (NanoTimer ignored = new NanoTimer()) {
-            actual = calculator.calculate(10000, 10000);
+            actual = calculator.calculate(1000000000L);
         }
 
         assertEquals(3.14159, actual, 0.00001);
