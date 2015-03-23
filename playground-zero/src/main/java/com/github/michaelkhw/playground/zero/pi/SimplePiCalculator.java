@@ -1,11 +1,9 @@
 package com.github.michaelkhw.playground.zero.pi;
 
-import com.google.common.base.Preconditions;
-
 /**
  * Created by michael on 21/3/15.
  */
-public class SerialPiCalculator implements PiCalculator {
+public class SimplePiCalculator implements PiCalculator {
     @Override
     public double calculate(final long iterations) {
         return calculateCore(0, iterations);
