@@ -8,10 +8,10 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by michael on 21/3/15.
  */
-public class SerialPiCalculatorTest {
+public class SimplePiCalculatorTest {
     @Test
     public void testCalculate() {
-        SerialPiCalculator calculator = new SerialPiCalculator();
+        SimplePiCalculator calculator = new SimplePiCalculator();
         // Put a heavy Load to the calculator
         calculator.calculate(10000000);
 
