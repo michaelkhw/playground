@@ -23,7 +23,7 @@ public class PiCalculatorTest {
                 new Object[][]{
                         {"Akka", new AkkaPiCalculator()},
                         {"Simple", new SimplePiCalculator()},
-                        {"Native", new NativePiCalculator()}
+                        //{"Native", new NativePiCalculator()}
                 });
     }
 
